@@ -1,0 +1,5 @@
+@p
+I feel bad when I say words.
+You feel bad when you say words.
+Someone feels bad when they say words.
+@e

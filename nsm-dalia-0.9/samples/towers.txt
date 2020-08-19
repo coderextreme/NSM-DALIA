@@ -1,3 +1,4 @@
+@p
 The ground is a place
 A disk is a thing I can move
 I can move a disk to the ground
@@ -28,3 +29,4 @@ My Hanoi Tower has N[=one,two,three...] disks
 There are no Hanoi Towers in these two other places now
 
 How do I move all of my Hanoi Tower’s disks to the far place in this game?
+@e

@@ -1,0 +1,30 @@
+The ground is a place
+A disk is a thing I can move
+I can move a disk to the ground
+One thing is on top of another thing:
+   this one thing is above the other thing
+   this one thing touches the other thing
+I can move a disk to be on top of another disk
+A Hanoi Tower is 
+  one disk on the ground or
+  one disk on top of a Hanoi Tower
+    this disk is smaller than all other disks in this Hanoi Tower
+
+My Hanoi Tower is in one place
+There are two other places on the ground
+One of these two places is near my Hanoi Tower
+The other of the two other places is far from my Hanoi Tower
+The near other place is near the far other place [animation hint]
+There can be Hanoi Towers in these two other places
+I want to move my Hanoi Tower disks like in a game:
+   In one moment, I move one disk, one time
+   I can move this disk to one of these two other places
+   I can move this disk to my Hanoi Tower's place
+   I can not move this disk from a Hanoi Tower to the same tower
+   After I move this disk, this disk is on top of a Hanoi Tower
+   I cannot move disks to any other place
+
+My Hanoi Tower has N[=one,two,three...] disks
+There are no Hanoi Towers in these two other places now
+
+How do I move all of my Hanoi Tower’s disks to the far place in this game?

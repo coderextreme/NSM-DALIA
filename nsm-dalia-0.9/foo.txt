@@ -1,0 +1,378 @@
+/*
+    This file is part of NSM-DALIA, an extensible parser and generator
+    for NSM grammars.
+       
+    Copyright (C) 2009 Francesco Zamblera.
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+Here is a sample of the sentences which NSM-DALIA can parse.
+This file is also an example of NSM input files.
+
+It's a simple text file with tags added.
+
+The tag @p at the beginning of a line causes all the following text to be parsed.
+The text to be parsed is not in NSM format: sentences are ended by fullstops, and indentation
+is not significative.
+
+The tag @e at the beginning of a line stops the parsing mode: the text following that tag is 
+simply output how it is.
+
+
+A minimal NSM sentence has the structure "Substantive Phrase + Predicate Phrase:"
+
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:e]),loc(l,sp(this,e,e,[],somewhere(place))),e)).
+end.
+
+SUBSTANTIVE PHRASES WITH ATTRIBUTES:
+ct(n(d),sp(e,e,e,[good],something(thing))).
+ct(n(d),sp(e,e,e,[bad],something(thing))).
+ct(n(d),sp(e,e,e,[good],someone(person))).
+ct(n(d),sp(e,e,e,[bad],someone(person))).
+ct(n(n),sp(e,e,num(plur),[good],people)).
+ct(n(n),sp(e,e,num(plur),[bad],people)).
+ct(n(n),sp(e,e,num(plur),[good],something(thing))).
+ct(n(n),sp(e,e,num(plur),[bad],something(thing))).
+end.
+
+DETERMINERS:
+ct(n(n),sp(this,e,e,[],someone(person))).
+ct(n(n),sp(this,e,e,[],something(thing))).
+ct(n(n),sp(this,e,num(some),[],people)).
+ct(n(n),sp(this,same,e,[],someone(person))).
+ct(n(n),sp(this,same,e,[],something(thing))).
+ct(n(n),sp(this,same,num(plur),[],people)).
+ct(n(d),sp(e,other,e,[],someone(person))).
+ct(n(d),sp(e,other,e,[],something(thing))).
+ct(n(n),sp(e,other,num(plur),[],people)).
+end.
+
+QUANTIFIERS:
+ct(n(n),sp(e,e,num(one),[],something(thing))).
+ct(n(n),sp(e,e,num(two),[],something(thing))).
+ct(n(n),sp(e,e,num(some),[],people)).
+ct(n(n),sp(e,e,num(some),[],something(thing))).
+ct(n(n),sp(e,e,num(many),[],people)).
+ct(n(n),sp(e,e,num(many),[],something(thing))).
+ct(n(n),sp(e,e,num(all),[],people)).
+ct(n(n),sp(e,e,num(all),[],something(thing))).
+end.
+
+KIND, PART:
+ct(n(n),sp(this,e,e,[],kind)).
+ct(n(n),sp(this,same,e,[],kind)).
+noparse("a other kind").
+ct(n(n),sp(e,e,num(one),[],kind)).
+ct(n(n),sp(e,e,num(two),[],kind)).
+ct(n(n),sp(e,e,num(all),[],kind)).
+ct(n(n),sp(e,e,num(many),[],kind)).
+ct(n(n),sp(this,e,e,[],part)).
+ct(n(n),sp(this,same,e,[],part)).
+noparse("a other part").
+ct(n(n),sp(e,e,num(one),[],part)).
+ct(n(n),sp(e,e,num(two),[],part)).
+ct(n(n),sp(e,e,num(many),[],part)).
+ct(n(n),sp(e,e,num(all),[],part)).
+ct(n(n),sp(e,e,num(some),[],part)).
+end.
+
+TIME, PLACE
+ct(n(n),sp(this,e,e,[],time(time))).
+ct(n(n),sp(this,same,e,[],time(time))).
+noparse("a other time").
+ct(n(n),sp(this,e,e,[],somewhere(place))).
+ct(n(n),sp(this,same,e,[],somewhere(place))).
+noparse("a other place").
+end.
+
+LIKE
+ct(n(d),sp(e,e,e,[rel(like,this)],someone(person))).
+ct(n(d),sp(e,e,e,[rel(like,sp(this,e,e,[],someone(person)))],someone(person))).
+ct(n(d),sp(e,e,e,[rel(like,this)],something(thing))).
+ct(n(d),sp(e,e,e,[rel(like,sp(this,e,e,[],something(thing)))],something(thing))).
+end.
+
+COMPLEX SUBSTANTIVE PHRASES:
+ct(n(n),sp(this,e,num(two),[],something(thing))).
+ct(n(n),sp(this,e,num(two),[],people)).
+ct(n(n),sp(this,e,num(two),[],somewhere(place))).
+ct(n(n),sp(e,other,num(one),[],someone(person))).
+ct(n(n),sp(e,other,num(one),[],something(thing))).
+ct(n(n),sp(e,other,num(one),[],somewhere(place))).
+ct(n(n),sp(e,other,num(two),[],people)).
+ct(n(n),sp(e,other,num(two),[],something(thing))).
+ct(n(n),sp(e,other,num(two),[],somewhere(place))).
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],d(me)),o:sp(this,same,e,[],something(thing)),d:e,c:e,i:e,b:e]),e,e)).
+end.
+
+
+"ONE OF"
+noparse("one of these people").
+noparse("one of these things").
+noparse("two of these people").
+noparse("two of these things").
+noparse("many of these people").
+noparse("many of these things").
+end.
+
+PREDICATE PHRASE
+ct(s,s(e,time(emph,e,at(before),this),e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:e]),e,e)).
+ct(s,s(e,time(emph,e,at(before),this),e,e,e,p(move,[a:sp(e,e,e,[],something(thing)),o:e]),e,e)).
+ct(s,s(e,time(emph,e,at(before),this),e,e,e,p(do,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:e,c:e,i:e,b:e]),e,e)).
+ct(s,s(e,time(emph,e,at(before),this),e,e,e,p(see,[a:sp(e,e,e,[],d(me)),o:sp(e,e,e,[],something(thing))]),e,e)).
+ct(s,s(e,time(emph,e,at(before),this),e,e,e,p(hear,[a:sp(e,e,e,[],d(me)),o:sp(e,e,e,[],something(thing)),t:e]),e,e)).
+ct(s,s(e,time(emph,e,at(before),this),e,e,e,p(say,[a:sp(e,e,e,[],d(me)),o:sp(e,e,e,[],something(thing)),d:e,t:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(this,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:e,c:e,i:e,b:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(say,[a:sp(e,e,e,[],d(me)),o:sp(e,e,num(one),[],something(thing)),d:e,t:e]),e,e)).
+ct(s,s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],d(me)),o:sp(e,e,e,[],something(thing))]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(see,[a:sp(e,e,e,[],d(me)),o:sp(e,e,e,[],someone(person))]),e,e)).
+end.
+
+VALENCES
+
+DO
+
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:e,c:e,i:e,b:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:sp(e,e,e,[],someone(person)),c:e,i:e,b:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:sp(e,e,e,[],someone(person)),c:e,i:sp(e,e,e,[],something(thing)),b:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:e,c:sp(e,e,e,[],someone(person)),i:e,b:e]),e,e)).
+end.
+
+HAPPEN
+
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:sp(e,e,e,[],someone(person))]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:e]),loc(l,sp(this,e,e,[],somewhere(place))),e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:e]),loc(here),e)).
+end.
+
+LIKE THIS
+
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],d(me)),o:e,d:e,c:e,i:e,b:e]),e,manner(this))).
+ct(s,s(e,time(e,before,e),e,e,e,p(say,[a:sp(e,e,e,[],d(me)),o:e,d:e,t:e]),e,manner(this))).
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(this,e,e,[],something(thing)),d:e]),e,manner(this))).
+ct(s,s(e,time(e,before,e),e,e,e,p(move,[a:sp(this,e,e,[],something(thing)),o:e]),e,manner(this))).
+ct(s,s(e,time(e,before,e),e,e,e,p(die,[o:sp(this,e,e,[],someone(person))]),e,manner(this))).
+end.
+
+LIVE
+
+these people lived for a long time.
+this person was living with that person.
+
+
+
+EXIST
+ct(s,s(e,e,e,e,e,p(exist,[j:sp(e,e,num(many),[rel(gen,sp(e,e,num(plur),[],something(bird)))],kind)]),e,e)).
+ct(s,s(e,e,e,e,e,p(exist,[j:sp(e,e,num(plur),[],people)]),loc(here),e)).
+ct(s,s(e,e,e,e,e,p(exist,[j:sp(e,e,e,[],someone(person))]),loc(l,sp(this,e,e,[],somewhere(place))),e)).
+ct(s,s(not,e,e,e,e,p(exist,[j:sp(e,e,e,[],someone(person))]),loc(here),e)).
+end.
+
+
+LOCATIONAL
+
+ct(s,s(not,e,e,e,e,p(have,[j:sp(e,e,e,[],d(me)),o:sp(any,e,e,[],something(thing))]),e,e)).
+ct(s,s(e,e,e,e,e,p(have,[j:sp(this,e,e,[],someone(person)),o:sp(e,e,num(many),[],something(thing))]),e,e)).
+ct(s,s(e,e,e,e,e,p(be,[j:sp(this,e,e,[],someone(person)),l:sp(this,e,e,[],somewhere(place))]),e,e)).
+ct(s,s(not,e,e,e,e,p(be,[j:sp(this,e,e,[],someone(person)),l:here]),e,e)).
+noparse("this thing is above that thing").
+noparse("this thing is below that thing").
+noparse("this thing is inside that thing").
+noparse("this thing is on the other side of that thing").
+ct(s,s(e,e,e,e,e,p(be,[j:sp(this,e,e,[],someone(person)),l:loc(near,sp(e,e,e,[],d(me)))]),e,e)).
+ct(s,s(e,e,e,e,e,p(be,[j:sp(this,e,e,[],someone(person)),l:loc(far,sp(e,e,e,[],d(me)))]),e,e)).
+end.
+
+
+
+THINK
+
+I think that you are someone good.
+I think about something.
+I think something good about someone.
+I think this.
+
+
+
+KNOW
+
+I know that you are someone good.
+I know something.
+I know something about someone.
+
+
+SAY
+ct(s,s(e,time(e,before,e),e,e,e,p(say,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:e,t:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(say,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:e,t:sp(e,e,e,[],something(thing))]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(say,[a:sp(e,e,e,[],someone(person)),o:sp(this,e,e,[],something(fact)),d:e,t:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(say,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:sp(e,e,e,[],someone(person)),t:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(say,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,num(some),[],word),d:e,t:e]),e,e)).
+end.
+
+
+WANT
+
+
+I want something.
+I want to do something.
+I want to know something.
+I want you to do something.
+I want something to happen.
+
+
+
+SEE, HEAR
+ct(s,s(e,time(e,before,e),e,e,e,p(see,[a:sp(e,e,e,[],d(me)),o:sp(e,e,e,[],something(thing))]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(hear,[a:sp(e,e,e,[],d(me)),o:sp(e,e,e,[],something(thing)),t:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(hear,[a:sp(e,e,e,[],d(me)),o:sp(this,e,num(some),[],word),t:e]),e,e)).
+noparse("I saw someone in that place").
+end.
+
+FEEL
+ct(s,s(e,time(e,before,e),e,e,e,p(feel,[e:sp(e,e,e,[],d(me)),o:sp(e,e,e,[rel(like,this)],something(thing)),g:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(feel,[e:sp(e,e,e,[],d(me)),o:sp(e,e,e,[good],something(thing)),g:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(feel,[e:sp(e,e,e,[],d(me)),o:sp(e,e,e,[good],something(thing)),g:sp(e,e,e,[],d(you))]),e,e)).
+end.
+
+GOOD
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],d(me)),o:sp(e,e,e,[good],something(thing)),d:e,c:e,i:e,b:sp(e,e,e,[],d(you))]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(good,[o:sp(this,e,e,[],something(thing)),b:sp(e,e,e,[],d(me))]),e,e)).
+ct(s,s(e,e,e,e,e,p(good,[o:s(e,e,e,e,e,p(do,[a:sp(e,e,num(plur),[],people),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:e]),e,e),b:e]))).
+ct(s,s(e,e,e,e,e,p(good,[o:s(e,e,e,e,e,p(happen,[o:sp(e,e,e,[rel(like,this)],something(thing)),d:e]),e,e),b:e]))).
+ct(s,s(not,e,e,e,e,p(good,[o:p(do,[a:e,o:sp(this,e,e,[rel(gen,sp(e,e,num(plur),[],something(thing)))],kind),d:e,c:e,i:e,b:e]),b:e]))).
+ct(s,s(not,e,e,e,e,p(good,[o:s(e,e,e,e,e,p(do,[a:sp(e,e,e,[],d(you)),o:sp(this,e,e,[rel(gen,sp(e,e,num(plur),[],something(thing)))],kind),d:e,c:e,i:e,b:e]),e,e),b:e]))).
+end.
+
+
+TIME ADV
+ct(pp(time),sp(this,e,e,[],time(time))).
+noparse("at that time").
+ct(pp(time),sp(this,same,e,[],time(time))).
+ct(adv(time(tr)),time(e,before,e)).
+ct(adv(time(tr)),time(e,after,e)).
+ct(adv(time(tr)),time(e,before,d(this))).
+ct(adv(time(tr)),time(e,after,d(this))).
+noparse("before that time").
+noparse("after that time").
+ct(adv(time(tr)),time(e(some),before,e)).
+noparse("a long time after").
+end.
+
+at this time these people were doing something like this.
+at the same time these people were doing something like this.
+a long time before these people were doing something like this.
+some time before these people were doing something like this.
+this thing happened at this time.
+this thing happened a long time before.
+this thing happened for some time.
+
+
+
+LOC ADV
+ct(s,s(e,e,e,e,e,p(be,[j:sp(this,e,e,[],somewhere(place)),l:loc(far,here)]),e,e)).
+ct(s,s(e,e,e,e,e,p(be,[j:sp(this,e,e,[],somewhere(place)),j:sp(e,e,num(one),[big],somewhere(place))]),e,e)).
+ct(pp(l),sp(this,e,e,[],somewhere(place))).
+ct(pp(l),sp(this,same,e,[],somewhere(place))).
+ct(pp(l),sp(e,e,num(all),[],somewhere(place))).
+ct(pp(l),sp(e,e,num(many),[],somewhere(place))).
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(this,e,e,[],something(thing)),d:e]),loc(here),e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(this,e,e,[],something(thing)),d:e]),loc(above),e)).
+ct(adv(l(tr)),loc(near,here)).
+ct(adv(l(tr)),loc(far,here)).
+ct(adv(l(tr)),loc(near,sp(this,e,e,[],somewhere(place)))).
+ct(adv(l(tr)),loc(far,sp(this,e,e,[],somewhere(place)))).
+end.
+
+
+VERY
+ct(adv(l(i)),very(far)).
+ct(n(n),sp(e,e,num(one),[very(long)],time(time))).
+ct(a,very(good)).
+ct(a,very(bad)).
+ct(a,very(big)).
+ct(a,very(small)).
+end.
+
+
+MORE
+ct(s,s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],d(me)),o:[p(say,[a:e,o:more,d:e,t:e])]]),e,e)).
+ct(s,s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],d(me)),o:[p(see,[a:e,o:more])]]),e,e)).
+ct(s,s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],d(me)),o:[p(hear,[a:e,o:more,t:e])]]),e,e)).
+end.
+
+I want to know more about this thing.
+I want to do more.
+someone is not living any more.
+someone is not big any more.
+
+
+CAN
+ct(s,s(e,e,can,e,e,p(do,[a:sp(this,e,e,[],someone(person)),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:e]),e,e)).
+ct(s,s(not,e,can,e,e,p(do,[a:sp(this,e,e,[],someone(person)),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:e]),e,e)).
+ct(s,s(e,e,can,e,e,p(move,[a:sp(e,e,e,[],d(me)),o:e]),e,e)).
+ct(s,s(not,e,can,e,e,p(move,[a:sp(e,e,e,[],d(me)),o:e]),e,e)).
+ct(s,s(e,e,can,e,e,p(see,[a:sp(e,e,e,[],d(me)),o:sp(this,e,e,[],something(thing))]),e,e)).
+ct(s,s(not,e,can,e,e,p(see,[a:sp(e,e,e,[],d(me)),o:sp(this,e,e,[],something(thing))]),e,e)).
+ct(s,s(not,e,can,e,e,p(do,[a:sp(e,e,e,[],d(you)),o:sp(e,e,num(plur),[rel(like,this)],something(thing)),d:e,c:e,i:e,b:e]),e,e)).
+ct(s,s(e,e,can,e,e,p(happen,[o:sp(e,e,e,[bad],something(thing)),d:sp(e,e,e,[],d(me))]),e,e)).
+ct(s,s(e,e,can,e,e,p(move,[a:sp(this,e,e,[],something(thing)),o:e]),e,e)).
+ct(s,when(s(e,e,e,e,e,p(happen,[o:sp(e,e,e,[bad],something(thing)),d:sp(e,e,e,[],someone(person))]),e,e),s(e,e,can,e,e,p(good,[o:sp(this,e,e,[],something(fact)),b:sp(this,e,e,[],someone(person))]),e,e))).
+end.
+
+MAYBE
+ct(s,s(not,e,can,e,e,p(do,[a:sp(e,e,e,[],d(me)),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:e]),e,e)).
+ct(s,maybe(s(e,e,can,e,e,p(do,[a:sp(e,other,e,[],someone(person)),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:e]),e,e))).
+end.
+
+
+
+maybe this person knows something about it.
+maybe someone did something bad.
+maybe there is someone in this place.
+
+
+
+IF
+ct(s,if(s(e,e,e,e,e,p(do,[a:sp(e,e,e,[],d(you)),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:e]),e,e),s(e,time(e,after,e),e,e,e,p(say,[a:sp(e,e,num(plur),[],people),o:sp(e,e,num(plur),[bad],something(thing)),d:e,t:sp(e,e,e,[],d(you))]),e,e))).
+ct(s,if(s(e,e,e,e,e,p(happen,[o:sp(this,e,e,[],something(thing)),d:e]),e,e),s(e,time(e,after,e),e,e,e,p(good,[o:sp(this,e,e,[],something(fact)),b:sp(e,e,e,[],d(me))]),e,e))).
+end.
+
+if I do this thing all these people will do the same thing.
+
+BECAUSE
+ct(s,because(s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],d(me)),o:sp(e,e,e,[],something(thing)),d:sp(this,e,e,[],something(thing)),c:e,i:e,b:sp(some,e,e,[],time(time))]),e,e),sp(this,e,e,[],something(fact)))).
+ct(s,because(s(e,time(e,before,e),e,e,e,p(big,[o:sp(this,e,e,[],something(thing))]),e,e),sp(this,e,e,[],something(fact)))).
+ct(s,because(s(e,time(e,before,e),e,e,e,p(happen,[o:sp(this,other,e,[],something(thing)),d:e]),e,e),s(e,time(e,before,e),e,e,e,p(happen,[o:sp(this,e,e,[],something(thing)),d:e]),e,e))).
+ct(s,because(s(e,time(e,before,e),e,e,e,p(say,[a:sp(e,e,e,[],d(you)),o:sp(this,e,num(some),[],word),d:e,t:e]),e,e),s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],d(me)),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:e]),e,e))).
+end.
+
+
+LIKE
+ct(n(d),sp(e,e,e,[rel(like,sp(e,e,e,[],d(me)))],someone(person))).
+ct(n(d),sp(e,e,e,[rel(like,this)],something(thing))).
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],d(me)),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:e]),e,manner(this))).
+ct(s,s(e,time(e,before,e),e,e,e,p(do,[a:sp(e,e,e,[],d(me)),o:sp(e,e,e,[rel(like,this)],something(thing)),d:e,c:e,i:e,b:e]),e,e)).
+ct(s,s(e,time(e,before,e),e,e,e,p(happen,[o:sp(this,e,e,[],something(fact)),d:e]),e,manner(this))).
+ct(s,s(e,e,e,e,e,p(think,[e:sp(this,e,num(some),[],people),o:sp(e,e,e,[],something(thing)),t:sp(this,e,e,[],something(fact))]),e,manner(this))).
+ct(s,s(e,e,e,e,e,p(say,[a:sp(this,e,num(some),[],people),o:sp(this,e,e,[],something(fact)),d:e,t:e]),e,manner(this))).
+ct(s,s(e,e,e,e,e,p(live,[a:sp(this,e,num(some),[],people),c:e]),e,manner(this))).
+ct(s,s(e,time(e,before,e),e,e,e,p(i(move),[a:sp(this,e,num(some),[],something(thing)),o:e]),e,manner(this))).
+ct(s,like(s(e,time(e,before,e),e,e,e,p(do,[a:sp(this,e,e,[],someone(person)),o:sp(e,e,e,[bad],something(thing)),d:sp(e,e,e,[],d(me)),c:e,i:e,b:e]),e,e),s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],d(me)),o:[p(do,[a:e,o:sp(e,e,e,[bad],something(thing)),d:sp(this,e,e,[],someone(person)),c:e,i:e,b:e])]]),e,e))).
+end.
+
+

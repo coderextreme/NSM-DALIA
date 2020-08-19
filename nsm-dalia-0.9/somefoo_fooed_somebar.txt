@@ -1,6 +1,7 @@
 @p
 someone moves somewhere.
 someone moved somewhere.
+someone moved something.
 I moved somewhere.
 I moved something.
 something moved somewhere.

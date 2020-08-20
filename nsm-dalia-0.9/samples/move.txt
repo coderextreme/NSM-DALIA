@@ -4,13 +4,8 @@ someone moved somewhere.
 someone moved something.
 I moved somewhere.
 I moved something.
-something moved somewhere.
-He said something.
-someone touched something.
-someone touched somewhere.
-someone touches somewhere.
 someone moves.
 I moved.
 something moved.
-someone said something.
+something moved somewhere.
 @e

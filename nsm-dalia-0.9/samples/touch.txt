@@ -1,0 +1,5 @@
+@p
+someone touched something.
+someone touched somewhere.
+someone touches somewhere.
+@e

@@ -1,4 +1,4 @@
-noparse("NOT~DONΓÇÖT").
+DALIA> noparse("NOT~DON’T").
 noparse("not good").
 noparse("not bad").
 noparse("not like this").
@@ -7,9 +7,9 @@ noparse("someone can't do this").
 noparse("CAN").
 noparse("someone can't do something").
 noparse("someone can't not do something").
-noparse("it can be like this: ΓÇª").
+noparse("it can be like this: …").
 noparse("BECAUSE").
-noparse("ΓÇª not because of anything else").
+noparse("… not because of anything else").
 noparse("IF").
 noparse("if it happens like this for some time, ").
 noparse("").
@@ -23,9 +23,9 @@ noparse("").
 noparse("").
 noparse("MAYBE").
 noparse("LIKE~AS~WAY").
-noparse("it happens like this: ΓÇª it is like this: ΓÇª").
-noparse("someone thinks like this: ΓÇ£- -ΓÇ¥").
-noparse("ΓÇª do/say it in this way, not in a other way").
+noparse("it happens like this: … it is like this: …").
+noparse("someone thinks like this: “- -”").
+noparse("… do/say it in this way, not in a other way").
 noparse("VERY").
 noparse("very near").
 noparse("I want it very muC (=very)").
@@ -54,14 +54,14 @@ noparse("this something~thing").
 noparse("the same something~thing").
 noparse("something else~a other something").
 noparse("BODY").
-noparse("someoneΓÇÖs body").
-noparse("peopleΓÇÖs bodies").
-noparse("part of someoneΓÇÖs body").
-noparse("something bad happens inside someoneΓÇÖs body").
+noparse("someone’s body").
+noparse("people’s bodies").
+noparse("part of someone’s body").
+noparse("something bad happens inside someone’s body").
 noparse("someone feels something in the body").
 noparse("PEOPLE").
 noparse("few people").
-noparse("many people think like this: ΓÇª people can say ").
+noparse("many people think like this: … people can say ").
 noparse("").
 noparse("").
 noparse("").
@@ -70,7 +70,7 @@ noparse("a other kind").
 noparse("something/someone of one kind").
 noparse("people of one/two/many kinds").
 noparse("PART").
-noparse("part of someoneΓÇÖs body").
+noparse("part of someone’s body").
 noparse("a other part").
 noparse("this something has two/many parts").
 noparse("WORDS").
@@ -80,7 +80,7 @@ noparse("WANT").
 noparse("someone wants to do/know/say something").
 noparse("someone wants someone else to do/know/say something").
 noparse("I want it very muC").
-noparse("DONΓÇÖT WANT").
+noparse("DON’T WANT").
 noparse("I don't want this").
 noparse("someone doesn't want this").
 noparse("someone doesn't want to do something").
@@ -99,7 +99,7 @@ noparse("").
 noparse("").
 noparse("(to someone)").
 noparse("(about someone/something)").
-noparse("someone says something like this: ΓÇ£- -ΓÇ¥").
+noparse("someone says something like this: “- -”").
 noparse("someone says something with words").
 noparse("KNOW").
 noparse("this someone knows something (a lot)").
@@ -107,7 +107,7 @@ noparse("about someone/something").
 noparse("[I know that ").
 noparse("").
 noparse("").
-noparse("= it is like this: ΓÇª, I know it]").
+noparse("= it is like this: …, I know it]").
 noparse("SEE").
 noparse("someone sees someone/something (in a place)").
 noparse("people can/can't see well in this place").
@@ -117,8 +117,8 @@ noparse("people can feel something bad when they hear this word").
 noparse("THINK").
 noparse("someone thinks about someone else/something").
 noparse("someone thinks something good/bad about someone else/something").
-noparse("someone thinks like this: ΓÇ£- -ΓÇ¥").
-noparse("many people think like this: ΓÇ£- -ΓÇ¥").
+noparse("someone thinks like this: “- -”").
+noparse("many people think like this: “- -”").
 noparse("SMALL").
 noparse("BIG").
 noparse("BAD").
@@ -145,7 +145,7 @@ noparse("DIE").
 noparse("someone dies at this time").
 noparse("all people die at some time").
 noparse("THERE IS").
-noparse("there are two/many kinds of ΓÇª").
+noparse("there are two/many kinds of …").
 noparse("BE").
 noparse("this is something of one kind").
 noparse("this is something big/small").
@@ -153,21 +153,21 @@ noparse("I know who this someone is").
 noparse("(IS) MINE").
 noparse("this thing (knife, Sirt, etc").
 noparse(") is mine").
-noparse("[this thing is someone elseΓÇÖs = someone else can say about this thing: ΓÇ£it is mineΓÇ¥]").
+noparse("[this thing is someone else’s = someone else can say about this thing: “it is mine”]").
 noparse("MOVE").
 noparse("someone moves (in this place)").
-noparse("parts of this someoneΓÇÖs body move as this someone wants").
+noparse("parts of this someone’s body move as this someone wants").
 noparse("TOUCH").
-noparse("something touCes part of someoneΓÇÖs body").
+noparse("something touCes part of someone’s body").
 noparse("someone/people can/can't touC this something").
 noparse("INSIDE").
 noparse("inside this something").
-noparse("inside part of this someoneΓÇÖs body").
+noparse("inside part of this someone’s body").
 noparse("PLACE~WHERE~SOMEWHERE").
 noparse("(in) this place").
 noparse("(in) the same place").
 noparse("(in) this other").
-noparse("in the place where ΓÇª").
+noparse("in the place where …").
 noparse("HERE").
 noparse("ABOVE").
 noparse("far above this place").
@@ -178,7 +178,7 @@ noparse("ON ONE SIDE").
 noparse("NEAR").
 noparse("FAR").
 noparse("THIS").
-noparse("it is like this: ΓÇª").
+noparse("it is like this: …").
 noparse("THE SAME").
 noparse("the same someone").
 noparse("someone says/does/thinks/knows/wants/feels the same").
@@ -216,7 +216,7 @@ noparse("TIME~WHEN").
 noparse("(at) this time").
 noparse("(at) the same time").
 noparse("at a other time").
-noparse("at the time when ΓÇª").
+noparse("at the time when …").
 noparse("NOW").
 noparse("").
 noparse("").

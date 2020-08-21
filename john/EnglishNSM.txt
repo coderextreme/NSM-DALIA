@@ -1,5 +1,6 @@
 @p
-NOT~DON’T.
+not.
+don’t.
 not good.
 not bad.
 not like this.
@@ -7,7 +8,7 @@ I don't know.
 someone can't do this.
 @e
 @p
-CAN.
+can.
 someone can do something.
 someone can't do something.
 someone can't not do something.
@@ -15,25 +16,27 @@ something (good/bad) can happen.
 it can be like this: ….
 @e
 @p
-BECAUSE.
+because.
 because of this.
 it happened because this someone did something before.
 … not because of anything else.
 @e
 @p
-IF.
+if.
 if it happens like this for some time, ...,.
 if you do this, ....
 if someone does something like this, ....
 @e
 @p
-MAYBE.
+maybe.
 maybe it is like this.
 maybe it is not like this.
 maybe someone else can do it.
 @e
 @p
-LIKE~AS~WAY.
+like.
+as.
+way.
 it happens like this: … it is like this: ….
 someone thinks like this: “- -”.
 someone like me.
@@ -42,7 +45,7 @@ it happens as this someone wants.
 … do/say it in this way, not in another way.
 @e
 @p
-VERY.
+very.
 very big.
 very small.
 very good.
@@ -58,7 +61,8 @@ very very far.
 etc..
 @e
 @p
-MORE~ANYMORE.
+more.
+anymore.
 someone wants more.
 someone does more.
 someone wants to know/say/think more about it.
@@ -70,7 +74,8 @@ not living anymore.
 not like this anymore.
 @e
 @p
-I~ME.
+I.
+me.
 I want to do/know/say something.
 I want this.
 I don't want this.
@@ -79,13 +84,13 @@ something bad can happen to me.
 someone like me.
 @e
 @p
-YOU.
+you.
 I want you to do/know/say something.
 something bad can happen to you.
 you are someone like me.
 @e
 @p
-SOMEONE.
+someone.
 this someone.
 the same someone.
 someone else.
@@ -93,7 +98,8 @@ this other someone.
 someone does/says something.
 @e
 @p
-SOMETHING~THING.
+something.
+thing.
 this something~thing.
 the same something~thing.
 something else~another something.
@@ -102,7 +108,7 @@ something small.
 something of one kind.
 @e
 @p
-BODY.
+body.
 someone’s body.
 people’s bodies.
 part of someone’s body.
@@ -112,7 +118,7 @@ something bad happens inside someone’s body.
 someone feels something in the body.
 @e
 @p
-PEOPLE.
+people.
 these people.
 many people.
 some people.
@@ -121,7 +127,7 @@ many people think like this: … people can say ....
 people of one kind.
 @e
 @p
-KIND.
+kind.
 this kind.
 the same kind.
 another kind.
@@ -130,7 +136,7 @@ something/someone of one kind.
 people of one/two/many kinds.
 @e
 @p
-PART.
+part.
 part of someone’s body.
 this part.
 the same part.
@@ -139,7 +145,7 @@ this other part.
 this something has two/many parts.
 @e
 @p
-WORDS.
+words.
 many words.
 other words.
 one word.
@@ -150,7 +156,7 @@ say these words.
 these words say something.
 @e
 @p
-WANT.
+want.
 I want this.
 someone wants something.
 someone wants to do/know/say something.
@@ -159,20 +165,20 @@ someone wants something to happen.
 I want it very much.
 @e
 @p
-DON’T WANT.
+don’t want.
 I don't want this.
 someone doesn't want this.
 someone doesn't want to do something.
 someone doesn't want something to happen.
 @e
 @p
-FEEL.
+feel.
 someone feels something (good/bad).
 someone feels something (good/bad) in part of the body.
 someone feels something good/bad towards someone else/ something.
 @e
 @p
-DO.
+do.
 someone does something (to someone else).
 someone does something with.
 something else/part of the body.
@@ -180,7 +186,7 @@ someone does something with someone else.
 someone does something good (for someone else)/bad (to someone else).
 @e
 @p
-SAY.
+say.
 I say: ....
 someone says something (good/bad).
 (to someone).
@@ -191,7 +197,7 @@ someone says something with words.
 someone says a word to someone.
 @e
 @p
-KNOW.
+know.
 I know.
 this someone knows it.
 this someone knows something (a lot).
@@ -200,37 +206,37 @@ people can know this.
 [I know that ... = it is like this: …, I know it].
 @e
 @p
-SEE.
+see.
 someone sees someone/something (in a place).
 people can/can't see well in this place.
 someone/people can/can't see this something.
 @e
 @p
-HEAR.
+hear.
 someone hears something.
 people can feel something bad when they hear this word.
 @e
 @p
-THINK.
+think.
 someone thinks about someone else/something.
 someone thinks something good/bad about someone else/something.
 someone thinks like this: “- -”.
 many people think like this: “- -”.
 @e
 @p
-SMALL.
+small.
 something small.
 a small place.
 very small.
 @e
 @p
-BIG.
+big.
 something big.
 a big place.
 very big.
 @e
 @p
-BAD.
+bad.
 something bad.
 someone bad.
 something bad.
@@ -241,7 +247,7 @@ this is bad.
 it is bad if ....
 @e
 @p
-GOOD.
+good.
 something good.
 someone good.
 something good.
@@ -252,12 +258,12 @@ this is good.
 it is good if ....
 @e
 @p
-TRUE.
+true.
 this is true.
 this is not true.
 @e
 @p
-HAPPEN.
+happen.
 something happens.
 something happens to someone.
 something happens to something.
@@ -265,62 +271,64 @@ something happens somewhere (in a place).
 something happens inside someone/something.
 @e
 @p
-BE (SOMEWHERE).
+be (somewhere).
 someone is somewhere (in a place).
 something is somewhere (in a place).
 someone is with someone else.
 @e
 @p
-LIVE.
+live.
 someone lives for a long time.
 many people live in this place.
 this someone lives with someone else.
 it is good if someone lives like this.
 @e
 @p
-DIE.
+die.
 someone dies at this time.
 all people die at some time.
 @e
 @p
-THERE IS.
+there is.
 there is something in this place.
 there is someone in this place.
 there are two/many kinds of ….
 @e
 @p
-BE.
-(SOMEONE/SOMETHING).
+be.
+(Someone/something).
 this someone is someone like me.
 this is something of one kind.
 this is something big/small.
 I know who this someone is.
 @e
 @p
-(IS) MINE.
+(Is) mine.
 this thing (knife, shirt, etc.) is mine.
 [this thing is someone else’s = someone else can say about this thing: “it is mine”].
 @e
 @p
-MOVE.
+move.
 someone moves (in this place).
 something moves in this place.
 parts of this someone’s body move as this someone wants.
 @e
 @p
-TOUCH.
+touch.
 something touches something else (somewhere).
 something touches part of someone’s body.
 someone/people can/can't touch this something.
 @e
 @p
-INSIDE.
+inside.
 inside this something.
 inside this someone.
 inside part of this someone’s body.
 @e
 @p
-PLACE~WHERE~SOMEWHERE.
+place.
+where.
+somewhere.
 (in) this place.
 (in) the same place.
 somewhere else.
@@ -331,22 +339,22 @@ in many places.
 in the place where ….
 @e
 @p
-HERE.
+here.
 something is happening here now.
 @e
 @p
-ABOVE.
+above.
 above this place.
 far above this place.
 someone above other people.
 @e
 @p
-BELOW.
+below.
 below this place.
 far below this place.
 @e
 @p
-ON ONE SIDE.
+on one side.
 on this side.
 on the same side.
 on one side.
@@ -354,16 +362,16 @@ on two sides.
 on all sides.
 @e
 @p
-NEAR.
+near.
 near this place.
 near someone.
 @e
 @p
-FAR.
+far.
 far from this place.
 @e
 @p
-THIS.
+this.
 this someone (something).
 these people.
 this kind.
@@ -374,7 +382,7 @@ because of this.
 it is like this: ….
 @e
 @p
-THE SAME.
+the same.
 the same someone.
 the same thing.
 the same part.
@@ -384,7 +392,8 @@ in the same place.
 someone says/does/thinks/knows/wants/feels the same.
 @e
 @p
-OTHER~ELSE.
+other.
+else.
 someone else.
 something else.
 at another time.
@@ -397,7 +406,7 @@ this other someone.
 this other thing.
 @e
 @p
-ONE.
+one.
 one someone.
 one thing.
 one part.
@@ -409,7 +418,7 @@ something of one kind.
 one more thing.
 @e
 @p
-TWO.
+two.
 two things.
 two parts.
 two kinds.
@@ -417,7 +426,8 @@ two of these things/people.
 two more things.
 @e
 @p
-MUCH~MANY.
+much.
+many.
 many people.
 many things.
 many parts.
@@ -429,7 +439,7 @@ much more.
 many more.
 @e
 @p
-ALL.
+all.
 all people.
 all things.
 all parts.
@@ -439,7 +449,7 @@ in all places.
 all of this something (e.g. water).
 @e
 @p
-SOME.
+some.
 some people.
 some things.
 some parts.
@@ -450,14 +460,16 @@ some of these things/people.
 some of this something (e.g. water).
 @e
 @p
-LITTLE~FEW.
+little.
+few.
 few people.
 few things a little of this something (e.g. water).
 very little.
 very few.
 @e
 @p
-TIME~WHEN.
+time.
+when.
 (at) this time.
 (at) the same time.
 at another time.
@@ -467,19 +479,19 @@ at many times.
 at the time when ….
 @e
 @p
-NOW.
+now.
 something is happening here now.
 when I say this now, ....
 @e
 @p
-MOMENT.
+moment.
 it happens in one moment.
 a moment before.
 a moment after.
 at this moment.
 @e
 @p
-(FOR) SOME TIME.
+(For) some time.
 some time before.
 some time after.
 it happens like this for some time.
@@ -487,28 +499,28 @@ someone does this for some time.
 [during this time = at this time, for some time].
 @e
 @p
-A LONG TIME.
+a long time.
 a long time before.
 a long time after.
 a very long time.
 for a long time [= for some time, a long time].
 @e
 @p
-A SHORT TIME.
+a short time.
 a short time before.
 a short time after.
 a very short time.
 for a short time [= for some time, a short time].
 @e
 @p
-BEFORE.
+before.
 before this.
 some time before.
 a short time before.
 a long time before.
 @e
 @p
-AFTER.
+after.
 after this.
 some time after.
 a short time after.

@@ -6,26 +6,27 @@ type `c' for details.
 DALIA>  ** eng:e language module loaded.
  ** Current L1 set to eng:e
 
-DALIA> noparse("NOT~DON’T").
+DALIA> ct(neg,not).
+noparse("don’t").
 noparse("not good").
 noparse("not bad").
 noparse("not like this").
 noparse("I don't know").
 noparse("someone can't do this").
 end.
-noparse("CAN").
+ct(v(aux),p(can,[e,e,e,e,e],[j:e])).
 ct(s,s(e,e,can,e,e,p(do,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:e,c:e,i:e,b:e]),e,e)).
 noparse("someone can't do something").
 noparse("someone can't not do something").
 ct(s,s(e,e,can,e,e,p(happen,[o:sp(e,e,e,[],something(name([103,111,111,100,47,98,97,100]))),d:e]),e,e)).
 noparse("it can be like this: …").
 end.
-noparse("BECAUSE").
+ct(conj,because).
 ct(pp(cause),sp(this,e,e,[],something(fact))).
 ct(s,because(s(e,time(emph,e,before,e),e,e,e,p(do,[a:sp(this,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:e,c:e,i:e,b:e]),e,e),s(e,time(e,before,e),e,e,e,p(happen,[o:sp(this,e,e,[],something(fact)),d:e]),e,e))).
 noparse("… not because of anything else").
 end.
-noparse("IF").
+ct(conj,if).
 noparse("if it happens like this for some time, ").
 noparse("").
 noparse("").
@@ -39,12 +40,14 @@ noparse("").
 noparse("").
 noparse("").
 end.
-noparse("MAYBE").
+ct(adv(sent),maybe).
 ct(s,maybe(s(e,e,e,e,e,p(like,[j:sp(this,e,e,[],something(fact)),o:this]),e,e))).
 ct(s,maybe(s(not,e,e,e,e,p(like,[j:sp(this,e,e,[],something(fact)),o:this]),e,e))).
 ct(s,maybe(s(e,e,can,e,e,p(do,[a:sp(e,other,e,[],someone(person)),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:e]),e,e))).
 end.
-noparse("LIKE~AS~WAY").
+ct(comp,like).
+ct(conj,as).
+ct(n(n),sp(e,e,e,[],manner(manner))).
 noparse("it happens like this: … it is like this: …").
 noparse("someone thinks like this: “- -”").
 ct(n(d),sp(e,e,e,[rel(like,sp(e,e,e,[],d(me)))],someone(person))).
@@ -52,7 +55,7 @@ ct(s,s(e,e,e,e,e,p(do,[a:sp(this,e,e,[],someone(person)),o:sp(this,e,e,[],someth
 ct(s,like(s(e,e,e,e,e,p(want,[e:sp(this,e,e,[],someone(person)),o:e]),e,e),s(e,e,e,e,e,p(happen,[o:sp(this,e,e,[],something(fact)),d:e]),e,e))).
 noparse("… do/say it in this way, not in a other way").
 end.
-noparse("VERY").
+ct(adv,very).
 ct(a,very(big)).
 ct(a,very(small)).
 ct(a,very(good)).
@@ -68,7 +71,8 @@ ct(adv(l(i)),very(very(far))).
 noparse("etc").
 noparse("").
 end.
-noparse("MORE~ANYMORE").
+ct(alt,more).
+noparse("anymore").
 ct(s,s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],someone(person)),o:more]),e,e)).
 ct(s,s(e,e,e,e,e,p(do,[a:sp(e,e,e,[],someone(person)),o:more,d:e,c:e,i:e,b:e]),e,e)).
 noparse("someone wants to know/say/think more about it").
@@ -79,7 +83,8 @@ noparse("not more").
 noparse("not living anymore").
 noparse("not like this anymore").
 end.
-noparse("I~ME").
+ct(n(p),sp(e,e,e,[],d(me(subj)))).
+ct(n(p),sp(e,e,e,[],d(me))).
 noparse("I want to do/know/say something").
 ct(s,s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],d(me)),o:sp(this,e,e,[],something(fact))]),e,e)).
 noparse("I don't want this").
@@ -87,19 +92,20 @@ noparse("I don't know").
 ct(s,s(e,e,can,e,e,p(happen,[o:sp(e,e,e,[bad],something(thing)),d:sp(e,e,e,[],d(me))]),e,e)).
 ct(n(d),sp(e,e,e,[rel(like,sp(e,e,e,[],d(me)))],someone(person))).
 end.
-noparse("YOU").
+ct(n(p),sp(e,e,e,[],d(you))).
 noparse("I want you to do/know/say something").
 ct(s,s(e,e,can,e,e,p(happen,[o:sp(e,e,e,[bad],something(thing)),d:sp(e,e,e,[],d(you))]),e,e)).
 ct(s,s(e,e,e,e,e,p(be,[j:sp(e,e,e,[],d(you)),j:sp(e,e,e,[rel(like,sp(e,e,e,[],d(me)))],someone(person))]),e,e)).
 end.
-noparse("SOMEONE").
+ct(n(d),sp(e,e,e,[],someone(person))).
 ct(n(n),sp(this,e,e,[],someone(person))).
 noparse("the same someone").
 ct(n(d),sp(e,other,e,[],someone(person))).
 noparse("this other someone").
 noparse("someone does/says something").
 end.
-noparse("SOMETHING~THING").
+ct(n(d),sp(e,e,e,[],something(thing))).
+ct(n(n),sp(e,e,e,[],something(thing))).
 noparse("this something~thing").
 noparse("the same something~thing").
 noparse("something else~a other something").
@@ -107,7 +113,7 @@ ct(n(d),sp(e,e,e,[big],something(thing))).
 ct(n(d),sp(e,e,e,[small],something(thing))).
 ct(n(d),sp(e,e,e,[rel(gen,sp(e,e,num(one),[],kind))],something(thing))).
 end.
-noparse("BODY").
+ct(n(n),sp(e,e,e,[],body)).
 noparse("someone’s body").
 noparse("people’s bodies").
 noparse("part of someone’s body").
@@ -116,7 +122,7 @@ ct(n(n),sp(e,e,num(plur),[rel(gen,sp(e,e,num(two),[],kind))],body)).
 noparse("something bad happens inside someone’s body").
 noparse("someone feels something in the body").
 end.
-noparse("PEOPLE").
+ct(n(n),sp(e,e,num(plur),[],people)).
 ct(n(n),sp(this,e,num(some),[],people)).
 ct(n(n),sp(e,e,num(many),[],people)).
 ct(n(n),sp(e,e,num(some),[],people)).
@@ -127,7 +133,7 @@ noparse("").
 noparse("").
 ct(n(n),sp(e,e,num(plur),[rel(gen,sp(e,e,num(one),[],kind))],people)).
 end.
-noparse("KIND").
+ct(n(n),sp(e,e,e,[],kind)).
 ct(n(n),sp(this,e,e,[],kind)).
 ct(n(n),sp(this,same,e,[],kind)).
 noparse("a other kind").
@@ -135,7 +141,7 @@ ct(n(n),sp(this,other,e,[],kind)).
 noparse("something/someone of one kind").
 noparse("people of one/two/many kinds").
 end.
-noparse("PART").
+ct(n(n),sp(e,e,e,[],part)).
 noparse("part of someone’s body").
 ct(n(n),sp(this,e,e,[],part)).
 ct(n(n),sp(this,same,e,[],part)).
@@ -143,7 +149,7 @@ noparse("a other part").
 ct(n(n),sp(this,other,e,[],part)).
 noparse("this something has two/many parts").
 end.
-noparse("WORDS").
+ct(n(n),sp(e,e,num(plur),[],word)).
 ct(n(n),sp(e,e,num(many),[],word)).
 ct(n(n),sp(e,other,num(plur),[],word)).
 ct(n(n),sp(e,e,num(one),[],word)).
@@ -153,7 +159,7 @@ noparse("say something in other words").
 ct(v(v),p(say,[e,e,e,e,e],[a:e,o:sp(this,e,num(some),[],word),d:e,t:e])).
 ct(s,s(e,e,e,e,e,p(say,[a:sp(this,e,num(some),[],word),o:sp(e,e,e,[],something(thing)),d:e,t:e]),e,e)).
 end.
-noparse("WANT").
+ct(v(v),p(want,[e,e,e,e,e],[e:e,o:e])).
 ct(s,s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],d(me)),o:sp(this,e,e,[],something(fact))]),e,e)).
 ct(s,s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing))]),e,e)).
 noparse("someone wants to do/know/say something").
@@ -161,25 +167,25 @@ noparse("someone wants someone else to do/know/say something").
 ct(s,s(e,e,e,e,e,p(want,[e:sp(e,e,e,[],someone(person)),o:[p(happen,[o:sp(e,e,e,[],something(thing)),d:e])]]),e,e)).
 noparse("I want it very muC").
 end.
-noparse("DON’T WANT").
+noparse("don’t want").
 noparse("I don't want this").
 noparse("someone doesn't want this").
 noparse("someone doesn't want to do something").
 noparse("someone doesn't want something to happen").
 end.
-noparse("FEEL").
+ct(v(v),p(feel,[e,e,e,e,e],[e:e,o:e,g:e])).
 ct(s,s(e,e,e,e,e,p(feel,[e:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(name([103,111,111,100,47,98,97,100]))),g:e]),e,e)).
 noparse("someone feels something (good/bad) in part of the body").
 noparse("someone feels something good/bad towards someone else/ something").
 end.
-noparse("DO").
+ct(v(v),p(do,[e,e,e,e,e],[a:e,o:e,d:e,c:e,i:e,b:e])).
 noparse("someone does something (to someone else)").
 noparse("someone does something with").
 noparse("something else/part of the body").
 ct(s,s(e,e,e,e,e,p(do,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),d:e,c:sp(e,other,e,[],someone(person)),i:e,b:e]),e,e)).
 noparse("someone does something good (for someone else)/bad (to someone else)").
 end.
-noparse("SAY").
+ct(v(v),p(say,[e,e,e,e,e],[a:e,o:e,d:e,t:e])).
 ct(s,s(e,e,e,e,e,p(say,[a:sp(e,e,e,[],d(me)),o:e,d:e,t:e]),e,e)).
 noparse("").
 noparse("").
@@ -192,7 +198,7 @@ noparse("someone says something like this: “- -”").
 noparse("someone says something with words").
 ct(s,s(e,e,e,e,e,p(say,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,num(one),[],word),d:sp(e,e,e,[],someone(person)),t:e]),e,e)).
 end.
-noparse("KNOW").
+ct(v(v),p(know,[e,e,e,e,e],[e:e])).
 ct(s,s(e,e,e,e,e,p(know,[e:sp(e,e,e,[],d(me))]),e,e)).
 ct(s,s(e,e,e,e,e,p(know,[e:sp(this,e,e,[],someone(person)),o:sp(this,e,e,[],something(fact))]),e,e)).
 noparse("this someone knows something (a lot)").
@@ -203,32 +209,32 @@ noparse("").
 noparse("").
 noparse("= it is like this: …, I know it]").
 end.
-noparse("SEE").
+ct(v(v),p(see,[e,e,e,e,e],[a:e,o:e])).
 noparse("someone sees someone/something (in a place)").
 noparse("people can/can't see well in this place").
 noparse("someone/people can/can't see this something").
 end.
-noparse("HEAR").
+ct(v(v),p(hear,[e,e,e,e,e],[a:e,o:e,t:e])).
 ct(s,s(e,e,e,e,e,p(hear,[a:sp(e,e,e,[],someone(person)),o:sp(e,e,e,[],something(thing)),t:e]),e,e)).
 noparse("people can feel something bad when they hear this word").
 end.
-noparse("THINK").
+ct(v(v),p(think,[e,e,e,e,e],[e:e])).
 noparse("someone thinks about someone else/something").
 noparse("someone thinks something good/bad about someone else/something").
 noparse("someone thinks like this: “- -”").
 noparse("many people think like this: “- -”").
 end.
-noparse("SMALL").
+ct(a,small).
 ct(n(d),sp(e,e,e,[small],something(thing))).
 ct(n(n),sp(e,e,num(one),[small],somewhere(place))).
 ct(a,very(small)).
 end.
-noparse("BIG").
+ct(a,big).
 ct(n(d),sp(e,e,e,[big],something(thing))).
 ct(n(n),sp(e,e,num(one),[big],somewhere(place))).
 ct(a,very(big)).
 end.
-noparse("BAD").
+ct(a,bad).
 ct(n(d),sp(e,e,e,[bad],something(thing))).
 ct(n(d),sp(e,e,e,[bad],someone(person))).
 ct(n(d),sp(e,e,e,[bad],something(thing))).
@@ -241,7 +247,7 @@ noparse("").
 noparse("").
 noparse("").
 end.
-noparse("GOOD").
+ct(a,good).
 ct(n(d),sp(e,e,e,[good],something(thing))).
 ct(n(d),sp(e,e,e,[good],someone(person))).
 ct(n(d),sp(e,e,e,[good],something(thing))).
@@ -254,65 +260,67 @@ noparse("").
 noparse("").
 noparse("").
 end.
-noparse("TRUE").
+ct(a,true).
 ct(s,s(e,e,e,e,e,p(true,[o:sp(this,e,e,e,something(fact))]),e,e)).
 ct(s,s(not,e,e,e,e,p(true,[o:sp(this,e,e,e,something(fact))]),e,e)).
 end.
-noparse("HAPPEN").
+ct(v(v),p(happen,[e,e,e,e,e],[o:e,d:e])).
 ct(s,s(e,e,e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:e]),e,e)).
 ct(s,s(e,e,e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:sp(e,e,e,[],someone(person))]),e,e)).
 ct(s,s(e,e,e,e,e,p(happen,[o:sp(e,e,e,[],something(thing)),d:sp(e,e,e,[],something(thing))]),e,e)).
 noparse("something happens somewhere (in a place)").
 noparse("something happens inside someone/something").
 end.
-noparse("BE (SOMEWHERE)").
+noparse("be (somewhere)").
 noparse("someone is somewhere (in a place)").
 noparse("something is somewhere (in a place)").
 ct(s,s(e,e,e,e,e,p(be,[j:sp(e,e,e,[],someone(person)),c:sp(e,other,e,[],someone(person))]),e,e)).
 end.
-noparse("LIVE").
+ct(v(v),p(live,[e,e,e,e,e],[a:e,c:e])).
 ct(s,s(e,e,e,e,dur(long),p(live,[a:sp(e,e,e,[],someone(person)),c:e]),e,e)).
 ct(s,s(e,e,e,e,e,p(live,[a:sp(e,e,num(many),[],people),c:e]),loc(l,sp(this,e,e,[],somewhere(place))),e)).
 ct(s,s(e,e,e,e,e,p(live,[a:sp(this,e,e,[],someone(person)),c:sp(e,other,e,[],someone(person))]),e,e)).
 ct(s,s(e,e,e,e,e,p(good,[o:s(e,e,e,e,e,p(live,[a:sp(e,e,e,[],someone(person)),c:e]),e,manner(this)),b:e]))).
 end.
-noparse("DIE").
+ct(v(v),p(die,[e,e,e,e,e],[o:e])).
 noparse("someone dies at this time").
 noparse("all people die at some time").
 end.
-noparse("THERE IS").
+noparse("there is").
 ct(s,s(e,e,e,e,e,p(exist,[j:sp(e,e,e,[],something(thing))]),loc(l,sp(this,e,e,[],somewhere(place))),e)).
 ct(s,s(e,e,e,e,e,p(exist,[j:sp(e,e,e,[],someone(person))]),loc(l,sp(this,e,e,[],somewhere(place))),e)).
 noparse("there are two/many kinds of …").
 end.
-noparse("BE").
-ct(lit_name,[83,79,77,69,79,78,69,47,83,79,77,69,84,72,73,78,71]).
+ct(v(aux),p(be,[e,e,e,e,e],[j:e])).
+ct(lit_name,[83,111,109,101,111,110,101,47,115,111,109,101,116,104,105,110,103]).
 ct(s,s(e,e,e,e,e,p(be,[j:sp(this,e,e,[],someone(person)),j:sp(e,e,e,[rel(like,sp(e,e,e,[],d(me)))],someone(person))]),e,e)).
 noparse("this is something of one kind").
 noparse("this is something big/small").
 noparse("I know who this someone is").
 end.
-noparse("(IS) MINE").
+noparse("(Is) mine").
 noparse("this thing (knife, Sirt, etc").
 noparse(") is mine").
 noparse("[this thing is someone else’s = someone else can say about this thing: “it is mine”]").
 end.
-noparse("MOVE").
+ct(v(v),p(move,[e,e,e,e,e],[a:e])).
 noparse("someone moves (in this place)").
 ct(s,s(e,e,e,e,e,p(move,[a:sp(e,e,e,[],something(thing))]),loc(l,sp(this,e,e,[],somewhere(place))),e)).
 noparse("parts of this someone’s body move as this someone wants").
 end.
-noparse("TOUCH").
+ct(v(v),p(touch,[e,e,e,e,e],[a:e,o:e])).
 ct(s,s(e,e,e,e,e,p(touch,[a:sp(e,e,e,[],something(thing)),o:sp(e,other,e,[],something(name([115,111,109,101,119,104,101,114,101])))]),e,e)).
 noparse("something touCes part of someone’s body").
 noparse("someone/people can/can't touC this something").
 end.
-noparse("INSIDE").
+ct(adv(l(tr)),inside).
 noparse("inside this something").
 ct(adv(l(tr)),loc(inside,sp(this,e,e,[],someone(person)))).
 noparse("inside part of this someone’s body").
 end.
-noparse("PLACE~WHERE~SOMEWHERE").
+ct(n(n),sp(e,e,e,[],somewhere(place))).
+noparse("where").
+ct(n(d),sp(e,e,e,[],something(name([115,111,109,101,119,104,101,114,101])))).
 noparse("(in) this place").
 noparse("(in) the same place").
 ct(n(d),sp(e,other,e,[],something(name([115,111,109,101,119,104,101,114,101])))).
@@ -322,33 +330,33 @@ ct(pp(l),sp(e,e,num(some),[],somewhere(place))).
 ct(pp(l),sp(e,e,num(many),[],somewhere(place))).
 noparse("in the place where …").
 end.
-noparse("HERE").
+ct(adv(l(i)),here).
 ct(s,s(e,time(emph,e,now,e),e,e,e,p(i(happen),[o:sp(e,e,e,[],something(thing)),d:e]),loc(here),e)).
 end.
-noparse("ABOVE").
+ct(adv(l(tr)),above).
 ct(adv(l(tr)),loc(above,sp(this,e,e,[],somewhere(place)))).
 noparse("far above this place").
 noparse("someone above other people").
 end.
-noparse("BELOW").
+ct(adv(l(tr)),below).
 ct(adv(l(tr)),loc(below,sp(this,e,e,[],somewhere(place)))).
 noparse("far below this place").
 end.
-noparse("ON ONE SIDE").
+ct(pp(l),sp(e,e,num(one),[],side)).
 ct(pp(l),sp(this,e,e,[],side)).
 ct(pp(l),sp(this,same,e,[],side)).
 ct(pp(l),sp(e,e,num(one),[],side)).
 ct(pp(l),sp(e,e,num(two),[],side)).
 ct(pp(l),sp(e,e,num(all),[],side)).
 end.
-noparse("NEAR").
+ct(adv(l(tr)),near).
 ct(adv(l(tr)),loc(near,sp(this,e,e,[],somewhere(place)))).
 ct(adv(l(tr)),loc(near,sp(e,e,e,[],someone(person)))).
 end.
-noparse("FAR").
+ct(adv(l(i)),far).
 ct(adv(l(tr)),loc(far,sp(this,e,e,[],somewhere(place)))).
 end.
-noparse("THIS").
+ct(d(e),this).
 ct(n(n),sp(this,e,e,[],someone(name([115,111,109,101,116,104,105,110,103])))).
 ct(n(n),sp(this,e,num(some),[],people)).
 ct(n(n),sp(this,e,e,[],kind)).
@@ -358,7 +366,7 @@ ct(pp(l),sp(this,e,e,[],somewhere(place))).
 ct(pp(cause),sp(this,e,e,[],something(fact))).
 noparse("it is like this: …").
 end.
-noparse("THE SAME").
+noparse("the same").
 noparse("the same someone").
 ct(n(n),sp(this,same,e,[],something(thing))).
 ct(n(n),sp(this,same,e,[],part)).
@@ -367,7 +375,8 @@ ct(pp(time),sp(this,same,e,[],time(time))).
 ct(pp(l),sp(this,same,e,[],somewhere(place))).
 noparse("someone says/does/thinks/knows/wants/feels the same").
 end.
-noparse("OTHER~ELSE").
+ct(alt,other).
+ct(alt,other(1)).
 ct(n(d),sp(e,other,e,[],someone(person))).
 ct(n(d),sp(e,other,e,[],someone(name([115,111,109,101,116,104,105,110,103])))).
 noparse("at a other time").
@@ -379,7 +388,7 @@ ct(n(n),sp(this,other,e,[],kind)).
 noparse("this other someone").
 ct(n(n),sp(this,other,e,[],something(thing))).
 end.
-noparse("ONE").
+ct(num,one).
 noparse("one someone").
 ct(n(n),sp(e,e,num(one),[],something(thing))).
 ct(n(n),sp(e,e,num(one),[],part)).
@@ -390,14 +399,15 @@ noparse("one of these things/people").
 ct(n(d),sp(e,e,e,[rel(gen,sp(e,e,num(one),[],kind))],someone(name([115,111,109,101,116,104,105,110,103])))).
 ct(n(n),sp(e,more,num(one),[],something(thing))).
 end.
-noparse("TWO").
+ct(num,two).
 ct(n(n),sp(e,e,num(two),[],something(thing))).
 ct(n(n),sp(e,e,num(two),[],part)).
 ct(n(n),sp(e,e,num(two),[],kind)).
 noparse("two of these things/people").
 ct(n(n),sp(e,more,num(two),[],something(thing))).
 end.
-noparse("MUCH~MANY").
+noparse("muC").
+ct(num,many).
 ct(n(n),sp(e,e,num(many),[],people)).
 ct(n(n),sp(e,e,num(many),[],something(thing))).
 ct(n(n),sp(e,e,num(many),[],part)).
@@ -410,7 +420,7 @@ noparse("water)").
 noparse("muC more").
 noparse("many more").
 end.
-noparse("ALL").
+ct(num,all).
 ct(n(n),sp(e,e,num(all),[],people)).
 ct(n(n),sp(e,e,num(all),[],something(thing))).
 ct(n(n),sp(e,e,num(all),[],part)).
@@ -421,7 +431,7 @@ noparse("all of this something (e").
 noparse("g").
 noparse("water)").
 end.
-noparse("SOME").
+ct(num,some).
 ct(n(n),sp(e,e,num(some),[],people)).
 ct(n(n),sp(e,e,num(some),[],something(thing))).
 ct(n(n),sp(e,e,num(some),[],part)).
@@ -433,7 +443,8 @@ noparse("some of this something (e").
 noparse("g").
 noparse("water)").
 end.
-noparse("LITTLE~FEW").
+noparse("little").
+noparse("few").
 noparse("few people").
 noparse("few things a little of this something (e").
 noparse("g").
@@ -441,7 +452,8 @@ noparse("water)").
 noparse("very little").
 noparse("very few").
 end.
-noparse("TIME~WHEN").
+ct(n(n),sp(e,e,e,[],time(time))).
+ct(conj,when).
 noparse("(at) this time").
 noparse("(at) the same time").
 noparse("at a other time").
@@ -450,45 +462,45 @@ ct(pp(time),sp(e,e,num(some),[],time(time))).
 ct(pp(time),sp(e,e,num(many),[],time(time))).
 noparse("at the time when …").
 end.
-noparse("NOW").
+ct(adv(time(i)),time(e,now,e)).
 ct(s,s(e,time(emph,e,now,e),e,e,e,p(i(happen),[o:sp(e,e,e,[],someone(name([115,111,109,101,116,104,105,110,103]))),d:e]),loc(here),e)).
 ct(clause(when),s(e,time(emph,e,now,e),e,e,e,p(say,[a:sp(e,e,e,[],d(me)),o:sp(this,e,e,[],something(fact)),d:e,t:e]),e,e)).
 noparse("").
 noparse("").
 noparse("").
 end.
-noparse("MOMENT").
+noparse("moment").
 noparse("it happens in one moment").
 noparse("a moment before").
 noparse("a moment after").
 noparse("at this moment").
 end.
-noparse("(FOR) SOME TIME").
+noparse("(For) some time").
 ct(adv(time(tr)),time(e(some),before,e)).
 ct(adv(time(tr)),time(e(some),after,e)).
 noparse("it happens like this for some time").
 ct(s,s(e,e,e,e,e,p(do,[a:sp(e,e,e,[],someone(person)),o:sp(this,e,e,[],something(fact)),d:e,c:e,i:e,b:sp(some,e,e,[],time(time))]),e,e)).
 noparse("[during this time = at this time, for some time]").
 end.
-noparse("A LONG TIME").
+ct(n(n),sp(e,e,num(one),[long],time(time))).
 noparse("a long time before").
 noparse("a long time after").
 ct(n(n),sp(e,e,num(one),[very(long)],time(time))).
 noparse("for a long time [= for some time, a long time]").
 end.
-noparse("A SHORT TIME").
+ct(n(n),sp(e,e,num(one),[short],time(time))).
 noparse("a Sort time before").
 noparse("a Sort time after").
 ct(n(n),sp(e,e,num(one),[very(short)],time(time))).
 noparse("for a Sort time [= for some time, a Sort time]").
 end.
-noparse("BEFORE").
+ct(adv(time(tr)),time(e,before,e)).
 noparse("before this").
 ct(adv(time(tr)),time(e(some),before,e)).
 noparse("a Sort time before").
 noparse("a long time before").
 end.
-noparse("AFTER").
+ct(adv(time(tr)),time(e,after,e)).
 ct(adv(time(tr)),time(e,after,d(that))).
 ct(adv(time(tr)),time(e(some),after,e)).
 noparse("a Sort time after").

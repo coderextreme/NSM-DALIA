@@ -1,5 +1,6 @@
+DALIADIR=../nsm-dalia-0.9
 OUTDIR=`pwd`
-cd ../nsm-dalia-0.9
+cd $DALIADIR
 mkdir -p $OUTDIR
 /c/Program\ Files/swipl/bin/swipl.exe > $OUTDIR/parselog.txt<<EOF
 [dalia_cline].
